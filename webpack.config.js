@@ -28,14 +28,26 @@ module.exports = {
             {
                 test:/\.scss$/,
                 use:[
-                    development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                   development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
                     'css-loader',
                     'sass-loader'
                 ],
                 exclude:[nodeModulePath]
-            },{
+            },            {
+                test:/\.css$/,
+                use:[
+                    development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                    'css-loader'
+                ],
+                exclude:[nodeModulePath]
+            },
+            {
                 test:/\.jsx?$/,
                 use:['babel-loader'],
+                exclude:[nodeModulePath]
+            },{
+                test: /\.(woff|svg|ttf|eot)$/,
+                use: ['file-loader'],
                 exclude:[nodeModulePath]
             }
         ]
@@ -53,7 +65,7 @@ module.exports = {
         })
     ],
     optimization:{
-        minimize: true,
+        //minimize: true,
         runtimeChunk: {
             name: "manifest"
         },

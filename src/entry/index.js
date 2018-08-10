@@ -11,6 +11,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 // let MyPlan = asyncComponent(a=>require(['../modules/myPlan'],a));
 import Loadable from 'react-loadable';
 
+
 const MyLoadingComponent = ({ isLoading, error }) => {
     if (isLoading) {
         return <div>Loading...</div>;
