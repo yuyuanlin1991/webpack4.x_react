@@ -2,10 +2,28 @@
  * Created by yuyuanlin on 2018/7/5.
  */
 import React from 'react';
-import Icon from 'components/icon'
+import Icon from 'components/icon';
+import http from 'common/http';
 class myPlan extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount(){
+/*        http.get("/api/list")
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((e)=>{
+                console.log(e);
+            })*/
+        http.get("/api/failure")
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((e)=>{
+                console.log(e);
+            })
     }
 
     render() {

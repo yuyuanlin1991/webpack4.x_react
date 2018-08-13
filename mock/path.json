@@ -1,0 +1,5 @@
+{
+  "/api/list":"/list",
+  "/api/success":"/success",
+  "/api/failure":"/failure"
+}

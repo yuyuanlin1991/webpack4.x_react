@@ -6,7 +6,8 @@
   "scripts": {
     "server": "nodemon bin/app.js NODE_ENV=development",
     "start": "set MODE=development&webpack --config webpack.config.js --color --progress --watch --mode=development",
-    "build": "webpack --config webpack.config.js  --mode=production"
+    "build": "webpack --config webpack.config.js  --mode=production",
+    "mock":"json-server --watch mock/db.json --port 8081 --routes mock/path.json"
   },
   "author": "",
   "license": "ISC",
