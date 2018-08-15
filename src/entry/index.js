@@ -12,6 +12,10 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Loadable from 'react-loadable';
 
 
+
+import { Provider } from 'react-redux';
+import  store from "reduxs/store"
+
 const MyLoadingComponent = ({ isLoading, error }) => {
     if (isLoading) {
         return <div>Loading...</div>;
@@ -31,21 +35,23 @@ const MyPlan =Loadable({
 
 
 ReactDOM.render(
-    <Router >
-        <div>
-            <ul>
-                <li>
-                    <Link to="/expense">我的账单</Link>
-                </li>
-                <li>
-                    <Link to="/plan">我的计划</Link>
-                </li>
-            </ul>
-            <hr />
-            <Route exact path="/" component={MyExpense} />
-            <Route path="/expense" component={MyExpense} />
-            <Route path="/plan" component={MyPlan} />
-        </div>
-    </Router>,
+    <Provider store={store}>
+        <Router >
+            <div>
+                <ul>
+                    <li>
+                        <Link to="/expense">我的账单</Link>
+                    </li>
+                    <li>
+                        <Link to="/plan">我的计划</Link>
+                    </li>
+                </ul>
+                <hr />
+                <Route exact path="/" component={MyExpense}/>
+                <Route path="/expense" component={MyExpense}/>
+                <Route path="/plan" component={MyPlan}/>
+            </div>
+        </Router>
+    </Provider>,
     document.getElementById('app')
 );

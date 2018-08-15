@@ -86,7 +86,8 @@ module.exports = {
             components:__dirname+"/src/components",
             common:__dirname+"/src/common",
             modules:__dirname+"/src/modules",
-            theme:__dirname+"/src/theme"
+            theme:__dirname+"/src/theme",
+            reduxs:__dirname+"/src/redux"
         }
     }
 
