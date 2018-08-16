@@ -1,0 +1,26 @@
+
+.tab-wrap{
+    height: 48px;
+    background-color: #ccc;
+    line-height: 48px;
+    padding:0 50px;
+    .tab-title{
+        padding:0 10px;
+        text-decoration:none;
+        &:hover{
+            color:#8686ef;
+        }
+    }
+    .tab-item{
+        padding:0 30px;
+        &:hover{
+            color:#8686ef;
+        }
+    }
+    .tab-user{
+        float: right;
+        padding:0 10px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+}

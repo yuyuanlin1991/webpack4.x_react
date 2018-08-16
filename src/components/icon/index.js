@@ -14,9 +14,10 @@ class App extends React.Component {
     }
     render() {
         let {props} = this;
-        let {className} = props;
+        let {className,style} = props;
+        let Children = props.children;
         return (
-            <i className = {props.type+" "+className} {...props}/>
+            <span {...props} className = {props.type+" "+className} ><span style={{padding:"0 10px"}}>{Children}</span></span>
         );
     }
 }
