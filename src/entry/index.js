@@ -6,8 +6,9 @@ import ReactDOM from 'react-dom';
 import MyExpense from '../modules/myExpense';
 //MyExpense未动态加载
 import Navigate from "components/navigate";
-import "theme/theme.scss"
-//import MyPlan from '../modules/myPlan'
+import "theme/theme.scss";
+import 'lida/dist/lida.min.css';
+
 import { HashRouter as Router, Route, Link ,Redirect} from "react-router-dom";
 //除了HashRouter 外还有BrowseRouter,后者需要后端做配合，以防和别的get请求有冲突
 // import asyncComponent from 'loader';

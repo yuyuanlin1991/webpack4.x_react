@@ -26,18 +26,24 @@ module.exports = {
         //任何与noParse正则表达式相匹配的文件都不会被webpack解析，注意忽略的而文件中不应该有import，require,define等被调用的而文件
         rules:[
             {
-                test:/\.scss$/,
-                use:[
-                   development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
-                    'css-loader',
-                    'sass-loader'
+                test:/\.css$/,
+                use:["style-loader","css-loader"
+                    /*                    development?"style-loader":MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                     {
+                     loader: 'css-loader',
+                     options: {
+                     minimize:development?true:false
+                     }
+                     }*/
                 ],
                 exclude:[nodeModulePath]
-            },            {
-                test:/\.css$/,
+            },
+            {
+                test:/\.scss$/,
                 use:[
-                    development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
-                    'css-loader'
+                   //development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                    'css-loader',
+                    'sass-loader'
                 ],
                 exclude:[nodeModulePath]
             },
@@ -47,6 +53,11 @@ module.exports = {
                 exclude:[nodeModulePath]
             },{
                 test: /\.(woff|svg|ttf|eot)$/,
+                use: ['file-loader'],
+                exclude:[nodeModulePath]
+            },
+            {
+                test: /\.(jpg|png|jpeg|gif)$/,
                 use: ['file-loader'],
                 exclude:[nodeModulePath]
             }
