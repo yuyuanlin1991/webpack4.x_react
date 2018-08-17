@@ -27,21 +27,35 @@ module.exports = {
         rules:[
             {
                 test:/\.css$/,
-                use:["style-loader","css-loader"
-                    /*                    development?"style-loader":MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
-                     {
-                     loader: 'css-loader',
-                     options: {
-                     minimize:development?true:false
-                     }
-                     }*/
+                use:[
+                    development ? "style-loader" : MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: development ? true : false
+                        }
+                    }
                 ],
                 exclude:[nodeModulePath]
             },
             {
+                test:/\.min\.css$/,
+                use:[
+                    development ? "style-loader" : MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: development ? true : false
+                        }
+                    }
+                ],
+                //exclude:[nodeModulePath],
+                include:[path.resolve(__dirname, './node_modules/lida')]
+            },
+            {
                 test:/\.scss$/,
                 use:[
-                   //development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
+                    development?MiniCssExtractPlugin.loader:MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
                     'css-loader',
                     'sass-loader'
                 ],
@@ -53,8 +67,7 @@ module.exports = {
                 exclude:[nodeModulePath]
             },{
                 test: /\.(woff|svg|ttf|eot)$/,
-                use: ['file-loader'],
-                exclude:[nodeModulePath]
+                use: ['file-loader']
             },
             {
                 test: /\.(jpg|png|jpeg|gif)$/,
