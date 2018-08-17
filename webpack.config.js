@@ -9,6 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');  // 用于创建html�
 const development = (process.env.MODE == 'development'?true:false);
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const nodeModulePath = path.resolve(__dirname, './node_modules');
+const srcModulePath = path.resolve(__dirname, './src');
 
 module.exports = {
     entry:{
@@ -36,9 +37,9 @@ module.exports = {
                         }
                     }
                 ],
-                exclude:[nodeModulePath]
+                //exclude:[nodeModulePath]
             },
-            {
+/*            {
                 test:/\.min\.css$/,
                 use:[
                     development ? "style-loader" : MiniCssExtractPlugin.loader,//当是开发模式下时可以为style-loader
@@ -50,8 +51,8 @@ module.exports = {
                     }
                 ],
                 //exclude:[nodeModulePath],
-                include:[path.resolve(__dirname, './node_modules/lida')]
-            },
+                //include:[path.resolve(__dirname, './node_modules/lida')]
+            },*/
             {
                 test:/\.scss$/,
                 use:[

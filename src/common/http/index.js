@@ -11,11 +11,15 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 var http = {};
 let method = ["get","post","put","delete"];
 method.map((m)=>{
-    http[m] =(...argus)=>{
-        return axios[m](...argus)
+    http[m] =(...args)=>{
+        return axios[m](...args)
             .then((res) => {
-                if (res.data.code === 1) {
-                    return res.data;
+                if (res.data.code === 1 ) {
+                    if(res.status>=200 && res.status<400){
+                        return res.data;
+                    }else{
+                        throw new Error({message:"请求错误"});
+                    }
                 } else {
                     throw new Error(res.data.msg);
                 }
@@ -25,9 +29,9 @@ method.map((m)=>{
             })
     }
 });
-http.formPost = (argus)=>{
-    let params = argus.data;
-    let url = argus.url;
+http.formPost = (args)=>{
+    let params = args.data;
+    let url = args.url;
     let form = new FormData();
     for (let key in params ){
         form.append(key,params[key]);

@@ -1,16 +1,16 @@
 {
-  "success":{
-    "code":1,
-    "data":null,
-    "msg":"操作成功"
+  "success": {
+    "code": 1,
+    "data": null,
+    "msg": "操作成功"
   },
-  "failure":{
-    "code":0,
-    "data":null,
-    "msg":"操作成功"
+  "failure": {
+    "code": 0,
+    "data": null,
+    "msg": "操作成功"
   },
   "list": {
-    "code":1,
+    "code": 1,
     "data": [
       {
         "id": 1,
@@ -68,6 +68,48 @@
         "author": "typicode"
       }
     ],
-    "msg":"操作成功"
-  }
+    "msg": "操作成功"
+  },
+  "list_post": [
+    {
+      "id": 1,
+      "title": "学习",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "上班",
+      "author": "typicode"
+    },
+    {
+      "id": 3,
+      "title": "刷剧",
+      "author": "typicode"
+    },
+    {
+      "title": "我是posts",
+      "author": "typicode",
+      "id": 4
+    },
+    {
+      "title": "我是posts",
+      "author": "typicode",
+      "id": 5
+    },
+    {
+      "title": "我是posts",
+      "author": "typicode",
+      "id": 6
+    },
+    {
+      "title": "我是posts",
+      "author": "typicode",
+      "id": 7
+    },
+    {
+      "title": "我是posts",
+      "author": "typicode",
+      "id": 8
+    }
+  ]
 }

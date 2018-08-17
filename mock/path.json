@@ -1,5 +1,6 @@
 {
   "/api/list":"/list",
+  "/api/list_post":"/list_post",
   "/api/success":"/success",
   "/api/failure":"/failure"
 }

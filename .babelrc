@@ -2,7 +2,16 @@
   "presets": [
     "env","react","stage-0"
   ],
-  "plugins":[
-    "syntax-dynamic-import","transform-runtime"
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-runtime",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
   ]
+
 }
